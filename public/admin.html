@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel · Estudio Mango</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<!-- ═════════════ LOGIN ═════════════ -->
+<div class="acceso" id="acceso">
+  <form class="acceso__caja" id="form-acceso">
+    <div class="acceso__gato sprite-host" id="acceso-gato"></div>
+    <h1>Panel del estudio</h1>
+    <p>Mango custodia la puerta. Escribe la contraseña.</p>
+    <label class="campo">
+      <span>Contraseña</span>
+      <input type="password" id="clave" autocomplete="current-password" required placeholder="••••••••">
+    </label>
+    <button class="btn btn--primario" type="submit">Entrar</button>
+    <p class="acceso__error" id="acceso-error"></p>
+    <small class="acceso__pista">Clave inicial: <code>mango2026</code> — cámbiala en Ajustes.</small>
+  </form>
+</div>
+
+<!-- ═════════════ PANEL ═════════════ -->
+<div class="panel" id="panel" hidden>
+
+  <aside class="lateral">
+    <div class="lateral__marca">
+      <span class="lateral__gato sprite-host" id="lateral-gato"></span>
+      <div><b>Estudio Mango</b><small>panel de control</small></div>
+    </div>
+    <nav class="lateral__nav" id="menu">
+      <button data-vista="perfil" class="activo"><i>✦</i>Perfil</button>
+      <button data-vista="proyectos"><i>▣</i>Proyectos <span class="cuenta" id="cuenta-proyectos">0</span></button>
+      <button data-vista="servicios"><i>◈</i>Servicios</button>
+      <button data-vista="proceso"><i>⟶</i>Proceso</button>
+      <button data-vista="contacto"><i>✉</i>Contacto</button>
+      <button data-vista="biblioteca"><i>▤</i>Biblioteca</button>
+      <button data-vista="ajustes"><i>⚙</i>Ajustes</button>
+    </nav>
+    <div class="lateral__pie">
+      <a href="/" target="_blank" class="btn btn--fantasma btn--bloque">Ver el sitio ↗</a>
+      <button class="btn btn--texto btn--bloque" id="btn-salir">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <div class="principal">
+    <header class="barra">
+      <div>
+        <h2 id="titulo-vista">Perfil</h2>
+        <p id="sub-vista">Los datos que aparecen en la portada</p>
+      </div>
+      <div class="barra__acciones">
+        <span class="estado" id="estado-guardado">Todo guardado</span>
+        <button class="btn btn--primario" id="btn-guardar">Guardar cambios</button>
+      </div>
+    </header>
+
+    <main class="contenido">
+      <!-- ───── PERFIL ───── -->
+      <section class="vista" data-vista="perfil">
+        <div class="tarjeta-admin">
+          <h3>Identidad</h3>
+          <div class="grid-2">
+            <label class="campo"><span>Nombre</span><input data-ruta="perfil.nombre"></label>
+            <label class="campo"><span>Rol / especialidad</span><input data-ruta="perfil.rol"></label>
+            <label class="campo"><span>Titular — primera línea</span><input data-ruta="perfil.titularLinea1"></label>
+            <label class="campo"><span>Titular — segunda línea (en color)</span><input data-ruta="perfil.titularLinea2"></label>
+            <label class="campo"><span>Ubicación</span><input data-ruta="perfil.ubicacion"></label>
+            <label class="campo campo--switch">
+              <input type="checkbox" data-ruta="perfil.disponible"><span>Disponible para proyectos nuevos</span>
+            </label>
+          </div>
+          <label class="campo"><span>Resumen de portada</span><textarea rows="3" data-ruta="perfil.resumen"></textarea></label>
+          <label class="campo"><span>Biografía (deja una línea en blanco entre párrafos)</span><textarea rows="8" data-ruta="perfil.bio"></textarea></label>
+        </div>
+
+        <div class="tarjeta-admin">
+          <h3>Cifras del hero</h3>
+          <p class="ayuda">Los números que se cuentan solos bajo el titular.</p>
+          <div id="lista-datos" class="lista-simple"></div>
+          <button class="btn btn--fantasma" data-anadir="dato">+ Añadir cifra</button>
+        </div>
+
+        <div class="tarjeta-admin">
+          <h3>Frases del globo</h3>
+          <p class="ayuda">Van rotando junto a la ilustración de Mila.</p>
+          <div id="lista-frases" class="lista-simple"></div>
+          <button class="btn btn--fantasma" data-anadir="frase">+ Añadir frase</button>
+        </div>
+      </section>
+
+      <!-- ───── PROYECTOS ───── -->
+      <section class="vista" data-vista="proyectos" hidden>
+        <div class="fila-acciones">
+          <button class="btn btn--primario" id="btn-nuevo-proyecto">+ Nuevo proyecto</button>
+          <input class="buscador" id="buscar-proyecto" placeholder="Buscar por título o categoría…">
+        </div>
+        <div id="lista-proyectos" class="lista-proyectos"></div>
+      </section>
+
+      <!-- ───── SERVICIOS ───── -->
+      <section class="vista" data-vista="servicios" hidden>
+        <div id="lista-servicios" class="lista-bloques"></div>
+        <button class="btn btn--fantasma" data-anadir="servicio">+ Añadir servicio</button>
+      </section>
+
+      <!-- ───── PROCESO ───── -->
+      <section class="vista" data-vista="proceso" hidden>
+        <div id="lista-proceso" class="lista-bloques"></div>
+        <button class="btn btn--fantasma" data-anadir="paso">+ Añadir paso</button>
+      </section>
+
+      <!-- ───── CONTACTO ───── -->
+      <section class="vista" data-vista="contacto" hidden>
+        <div class="tarjeta-admin">
+          <h3>Bloque de contacto</h3>
+          <div class="grid-2">
+            <label class="campo"><span>Título</span><input data-ruta="contacto.titulo"></label>
+            <label class="campo"><span>Email</span><input data-ruta="contacto.email" type="email"></label>
+          </div>
+          <label class="campo"><span>Texto</span><textarea rows="3" data-ruta="contacto.texto"></textarea></label>
+        </div>
+        <div class="tarjeta-admin">
+          <h3>Redes</h3>
+          <div id="lista-redes" class="lista-bloques"></div>
+          <button class="btn btn--fantasma" data-anadir="red">+ Añadir red</button>
+        </div>
+      </section>
+
+      <!-- ───── BIBLIOTECA ───── -->
+      <section class="vista" data-vista="biblioteca" hidden>
+        <div class="soltar" id="soltar-global">
+          <b>Arrastra aquí tus archivos</b>
+          <span>imágenes, videos (mp4/webm/mov), gif, svg o pdf · hasta 260 MB</span>
+          <button class="btn btn--fantasma" id="btn-subir-global">Elegir archivos</button>
+          <input type="file" id="file-global" multiple hidden accept="image/*,video/*,.pdf">
+        </div>
+        <div class="progreso" id="progreso-global" hidden><div class="progreso__barra"><span></span></div><small></small></div>
+        <div id="galeria" class="galeria"></div>
+      </section>
+
+      <!-- ───── AJUSTES ───── -->
+      <section class="vista" data-vista="ajustes" hidden>
+        <div class="tarjeta-admin">
+          <h3>Sitio</h3>
+          <div class="grid-2">
+            <label class="campo"><span>Nombre del estudio</span><input data-ruta="sitio.titulo"></label>
+            <label class="campo"><span>Tema inicial</span>
+              <select data-ruta="sitio.temaInicial"><option value="noche">Noche</option><option value="dia">Día</option></select>
+            </label>
+            <label class="campo"><span>Nombre del gato</span><input data-ruta="gato.nombre"></label>
+          </div>
+        </div>
+        <div class="tarjeta-admin">
+          <h3>Frases del gato</h3>
+          <p class="ayuda">Lo que dice Mango cuando le hacen clic en la esquina.</p>
+          <div id="lista-tips" class="lista-simple"></div>
+          <button class="btn btn--fantasma" data-anadir="tip">+ Añadir frase</button>
+        </div>
+        <div class="tarjeta-admin">
+          <h3>Contraseña</h3>
+          <div class="grid-2">
+            <label class="campo"><span>Contraseña actual</span><input type="password" id="pass-actual" autocomplete="current-password"></label>
+            <label class="campo"><span>Nueva contraseña (mín. 6)</span><input type="password" id="pass-nueva" autocomplete="new-password"></label>
+          </div>
+          <button class="btn btn--fantasma" id="btn-pass">Cambiar contraseña</button>
+        </div>
+        <div class="tarjeta-admin tarjeta-admin--peligro">
+          <h3>Copia de seguridad</h3>
+          <p class="ayuda">Descarga todo el contenido en un archivo JSON, o restaura uno anterior.</p>
+          <div class="fila-acciones">
+            <button class="btn btn--fantasma" id="btn-exportar">Descargar copia</button>
+            <button class="btn btn--fantasma" id="btn-importar">Restaurar copia</button>
+            <input type="file" id="file-importar" accept="application/json" hidden>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- ═════════════ EDITOR DE PROYECTO ═════════════ -->
+<div class="cajon" id="cajon" hidden>
+  <div class="cajon__fondo" data-cerrar-cajon></div>
+  <div class="cajon__panel">
+    <header class="cajon__barra">
+      <h3 id="cajon-titulo">Editar proyecto</h3>
+      <button class="btn btn--texto" data-cerrar-cajon>Cerrar ✕</button>
+    </header>
+    <div class="cajon__cuerpo" id="cajon-cuerpo"></div>
+    <footer class="cajon__pie">
+      <button class="btn btn--peligro" id="btn-borrar-proyecto">Eliminar proyecto</button>
+      <button class="btn btn--primario" id="btn-listo-proyecto">Listo</button>
+    </footer>
+  </div>
+</div>
+
+<div class="avisos" id="avisos"></div>
+
+
+<script src="/js/embeds.js"></script>
+<script src="/js/sprites.js"></script>
+<script src="/js/pixel.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

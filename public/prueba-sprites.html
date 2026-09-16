@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprites · Estudio Mango</title>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#131A33; color:#EAF0FF; font-family:Inter,system-ui; padding:26px; }
+  h1 { font-family:Silkscreen,monospace; color:#FFC857; font-size:24px; margin:0 0 4px; }
+  p.intro { color:#98A5D6; margin:0 0 26px; }
+  h2 { font-family:Silkscreen,monospace; color:#6FE0B0; font-size:17px; margin:28px 0 12px; }
+  .fila { display:flex; gap:26px; flex-wrap:wrap; align-items:flex-end; }
+  figure { margin:0; text-align:center; background:#1A2242; padding:14px; }
+  figcaption { font-family:Silkscreen,monospace; font-size:13px; color:#98A5D6; margin-top:10px; }
+  .sprite { image-rendering:pixelated; }
+</style>
+</head>
+<body>
+<h1>Sprites del estudio</h1>
+<p class="intro">Todas las animaciones recortadas de tu hoja. Haz clic en cualquiera para que reaccione.</p>
+<div id="salida"></div>
+
+<script src="/js/sprites.js"></script>
+<script src="/js/pixel.js"></script>
+<script>
+  Pixel.precargar();
+  const salida = document.getElementById('salida');
+  const grupos = {
+    mila: ['bucle', 'saludar'],
+    milaVideo: ['bucle', 'grabar'],
+    milaTableta: ['bucle', 'dibujar'],
+    milaAbrazo: ['bucle', 'mimo'],
+    gatoPaseo: ['bucle', 'andar', 'correr'],
+    gatoQuieto: ['bucle', 'siesta'],
+    gatoIcono: ['bucle'],
+    props: ['lapiz', 'tableta', 'maleta', 'claqueta']
+  };
+  Object.keys(grupos).forEach((nombre) => {
+    const h2 = document.createElement('h2');
+    h2.textContent = nombre.toUpperCase();
+    salida.appendChild(h2);
+    const fila = document.createElement('div');
+    fila.className = 'fila';
+    salida.appendChild(fila);
+    grupos[nombre].forEach((anim) => {
+      const fig = document.createElement('figure');
+      const host = document.createElement('div');
+      fig.appendChild(host);
+      const cap = document.createElement('figcaption');
+      cap.textContent = anim;
+      fig.appendChild(cap);
+      fila.appendChild(fig);
+      const api = Pixel.plantar(host, nombre, { escala: 2, animacion: anim });
+      if (api) Pixel.mimar(api, nombre.indexOf('gato')===0 ? 'saludar' : (window.SPRITES[nombre].saludar ? 'saludar' : 'bucle'));
+    });
+  });
+</script>
+</body>
+</html>

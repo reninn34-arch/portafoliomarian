@@ -1,0 +1,17 @@
+{
+  "name": "estudio-mango",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portafolio interactivo de diseño gráfico con panel de administración. Funciona en local con archivos y en Vercel con Postgres + Blob.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "migrar": "node herramientas/migrar.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^1.1.1",
+    "pg": "^8.13.1"
+  },
+  "engines": { "node": ">=18" }
+}

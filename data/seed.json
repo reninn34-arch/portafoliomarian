@@ -1,0 +1,282 @@
+{
+  "sitio": {
+    "titulo": "Estudio Mango",
+    "favicon": "🍊",
+    "temaInicial": "noche"
+  },
+  "perfil": {
+    "nombre": "Mila Reyes",
+    "alias": "Mila",
+    "rol": "Diseñadora gráfica & directora de arte",
+    "titularLinea1": "Ideas que",
+    "titularLinea2": "maúllan fuerte",
+    "resumen": "Diseño identidades, piezas editoriales y animaciones con un gato naranja de supervisor. Mi trabajo vive entre el papel y el pixel: mucho color, formas curvas y una obsesión sana por el detalle.",
+    "bio": "Llevo ocho años dándole forma a marcas que no quieren parecerse a nadie. Empecé rayando cuadernos en clase de matemáticas y hoy dirijo proyectos de identidad, packaging y motion desde un pequeño estudio lleno de plantas, papeles de colores y un gato llamado Mango que se sienta encima de todo lo que imprimo.\n\nCreo en el diseño que se entiende antes de leerse: en la forma clara, el color valiente y el detalle que hace sonreír. Trabajo con marcas pequeñas, editoriales independientes y proyectos culturales.",
+    "ubicacion": "Ciudad de México · remoto",
+    "disponible": true,
+    "frases": [
+      "Hoy toca inventar algo que no existía ayer.",
+      "El color también sabe hablar.",
+      "Si no te da un poquito de miedo, no es lo bastante nuevo.",
+      "Mango dice que este trazo va mejor a la izquierda.",
+      "Bocetar fea la primera versión es parte del plan."
+    ],
+    "datos": [
+      {
+        "numero": "8",
+        "sufijo": "+",
+        "texto": "años diseñando"
+      },
+      {
+        "numero": "120",
+        "sufijo": "",
+        "texto": "proyectos entregados"
+      },
+      {
+        "numero": "34",
+        "sufijo": "",
+        "texto": "marcas acompañadas"
+      },
+      {
+        "numero": "1",
+        "sufijo": "",
+        "texto": "gato supervisor"
+      }
+    ]
+  },
+  "gato": {
+    "nombre": "Mango",
+    "tips": [
+      "Miau. Haz clic en un proyecto para verlo en grande.",
+      "Puedes cambiar el día y la noche allá arriba ☀︎",
+      "Filtra por categoría y encuentra lo tuyo.",
+      "Estoy vigilando que todo esté bien alineado.",
+      "Si te gusta algo, escríbele a Mila. Yo aviso."
+    ]
+  },
+  "categorias": [
+    "Identidad",
+    "Ilustración",
+    "Editorial",
+    "Packaging",
+    "Motion"
+  ],
+  "proyectos": [
+    {
+      "id": "p-luna-tostada",
+      "titulo": "Luna Tostada",
+      "categoria": "Identidad",
+      "anio": "2025",
+      "cliente": "Cafetería de barrio",
+      "resumen": "Identidad completa para una cafetería nocturna: logotipo, papelería y señalética.",
+      "descripcion": "Luna Tostada abre cuando los demás cierran. La identidad juega con la idea del café como compañía nocturna: una luna que también es un grano tostado, tipografía redonda y una paleta de ámbar sobre azul profundo.",
+      "etiquetas": [
+        "Logotipo",
+        "Papelería",
+        "Señalética"
+      ],
+      "color": "#FFC857",
+      "destacado": true,
+      "enlace": "",
+      "medios": [],
+      "objetivo": "Una cafetería que abre de noche necesitaba dejar de parecer \"otra cafetería más\" y que se la reconociera desde la acera, con poco presupuesto de rotulación.",
+      "decision": "Construí el logotipo sobre una sola idea: la luna y el grano de café son la misma forma. Eso permite usarlo enorme en la fachada o mínimo en el vaso sin perder legibilidad. La paleta ámbar sobre azul profundo resuelve el contraste de noche, que es cuando la gente la ve.",
+      "paleta": [
+        "#FFC857",
+        "#F2916B",
+        "#1B2A4A",
+        "#F6EFE3"
+      ],
+      "tipografias": [
+        {
+          "nombre": "Fraunces",
+          "uso": "logotipo y titulares"
+        },
+        {
+          "nombre": "Nunito Sans",
+          "uso": "carta y señalética"
+        }
+      ]
+    },
+    {
+      "id": "p-jardin-electrico",
+      "titulo": "Jardín Eléctrico",
+      "categoria": "Ilustración",
+      "anio": "2025",
+      "cliente": "Proyecto personal",
+      "resumen": "Serie de ilustraciones sobre plantas imposibles y ciudades que respiran.",
+      "descripcion": "Doce láminas hechas con pincel digital y texturas escaneadas de papel. Cada planta representa un hábito: la que crece de noche, la que solo florece si la miras, la que se cierra cuando gritas.",
+      "etiquetas": [
+        "Ilustración digital",
+        "Serie",
+        "Print"
+      ],
+      "color": "#6FE0B0",
+      "destacado": true,
+      "enlace": "",
+      "medios": [],
+      "objetivo": "Proyecto personal: una serie ilustrada que funcionara igual colgada en pared que publicada de una en una en redes.",
+      "decision": "Cada lámina se compone sobre la misma retícula y la misma paleta reducida, así la serie se lee como conjunto aunque se vea suelta. Las texturas vienen de papel escaneado de verdad para que el print no se sienta plano.",
+      "paleta": [
+        "#6FE0B0",
+        "#2F7D63",
+        "#FFE9CC",
+        "#241C22"
+      ],
+      "tipografias": [
+        {
+          "nombre": "Fraunces",
+          "uso": "títulos de cada lámina"
+        }
+      ]
+    },
+    {
+      "id": "p-revista-ruido",
+      "titulo": "Revista RUIDO",
+      "categoria": "Editorial",
+      "anio": "2024",
+      "cliente": "Editorial independiente",
+      "resumen": "Diseño editorial de una revista cultural: retícula flexible y tipografía con carácter.",
+      "descripcion": "Ciento veinte páginas donde el texto también es imagen. Construí una retícula de seis columnas que se rompe a propósito en los reportajes largos, con una familia tipográfica variable que cambia de peso según el tono de cada sección.",
+      "etiquetas": [
+        "Retícula",
+        "Tipografía",
+        "Impresión"
+      ],
+      "color": "#A78BFA",
+      "destacado": false,
+      "enlace": "",
+      "medios": [],
+      "objetivo": "Una revista cultural independiente quería que sus reportajes largos no espantaran al lector, sin recortar texto.",
+      "decision": "Retícula de seis columnas que se rompe a propósito en los reportajes: el texto respira y cambia de ritmo cada pocas páginas. La tipografía variable cambia de peso según la sección, así el lector sabe dónde está sin mirar el índice.",
+      "paleta": [
+        "#A78BFA",
+        "#241C22",
+        "#F6EFE3",
+        "#FF7BA9"
+      ],
+      "tipografias": [
+        {
+          "nombre": "Fraunces Variable",
+          "uso": "titulares y entradillas"
+        },
+        {
+          "nombre": "Inter",
+          "uso": "cuerpo de texto"
+        }
+      ]
+    },
+    {
+      "id": "p-mango-motion",
+      "titulo": "Mango en movimiento",
+      "categoria": "Motion",
+      "anio": "2026",
+      "cliente": "Demo de estudio",
+      "resumen": "Pieza animada de 20 segundos: el gato del estudio presentando la marca.",
+      "descripcion": "Animación 2D cuadro a cuadro combinada con formas vectoriales. Sirve como cabecera de las redes del estudio y como prueba de que un gato naranja puede sostener toda una identidad visual.",
+      "etiquetas": [
+        "Animación 2D",
+        "Redes",
+        "Branding"
+      ],
+      "color": "#FF7BA9",
+      "destacado": true,
+      "enlace": "",
+      "medios": [],
+      "objetivo": "Dar al estudio una cabecera animada propia para redes, que se reconociera en dos segundos y en silencio.",
+      "decision": "El gato hace de logotipo: entra, se sienta y mira a cámara. Animación 2D cuadro a cuadro para el personaje y formas vectoriales para el resto, que abarata las variantes. Funciona sin sonido porque toda la información está en el movimiento.",
+      "paleta": [
+        "#F2A24E",
+        "#FF7BA9",
+        "#0E1428",
+        "#EAF0FF"
+      ],
+      "tipografias": [
+        {
+          "nombre": "Press Start 2P",
+          "uso": "rótulo final"
+        }
+      ]
+    }
+  ],
+  "servicios": [
+    {
+      "icono": "lapiz",
+      "titulo": "Identidad visual",
+      "texto": "Logotipo, sistema tipográfico, paleta y manual de uso. Una marca que se sostiene sola.",
+      "incluye": [
+        "Investigación",
+        "Naming opcional",
+        "Manual de marca"
+      ]
+    },
+    {
+      "icono": "tableta",
+      "titulo": "Ilustración a medida",
+      "texto": "Series ilustradas para editoriales, packaging o campañas. Estilo propio, no plantillas.",
+      "incluye": [
+        "Bocetos",
+        "Arte final",
+        "Archivos vectoriales"
+      ]
+    },
+    {
+      "icono": "maleta",
+      "titulo": "Diseño editorial",
+      "texto": "Libros, revistas y reportes que se leen con gusto. Retículas claras y ritmo visual.",
+      "incluye": [
+        "Retícula",
+        "Maquetación",
+        "Preprensa"
+      ]
+    },
+    {
+      "icono": "claqueta",
+      "titulo": "Motion & redes",
+      "texto": "Animaciones cortas, reels y plantillas para que la marca se mueva todos los días.",
+      "incluye": [
+        "Storyboard",
+        "Animación 2D",
+        "Kit de plantillas"
+      ]
+    }
+  ],
+  "proceso": [
+    {
+      "titulo": "Escuchar",
+      "texto": "Una charla larga, muchas preguntas y un tablero lleno de referencias."
+    },
+    {
+      "titulo": "Bocetar",
+      "texto": "Papel primero. Diez ideas feas para encontrar la buena."
+    },
+    {
+      "titulo": "Diseñar",
+      "texto": "Forma, color y tipografía hasta que todo encaje sin ruido."
+    },
+    {
+      "titulo": "Entregar",
+      "texto": "Archivos ordenados, manual claro y acompañamiento después del lanzamiento."
+    }
+  ],
+  "contacto": {
+    "titulo": "¿Empezamos algo?",
+    "texto": "Cuéntame qué tienes en mente. Respondo en menos de 48 horas, con Mango revisando el correo por encima de mi hombro.",
+    "email": "hola@estudiomango.com",
+    "telefono": "",
+    "redes": [
+      {
+        "nombre": "Instagram",
+        "url": "https://instagram.com"
+      },
+      {
+        "nombre": "Behance",
+        "url": "https://behance.net"
+      },
+      {
+        "nombre": "LinkedIn",
+        "url": "https://linkedin.com"
+      }
+    ]
+  }
+}

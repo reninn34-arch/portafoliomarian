@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="noche">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudio Mango · Portafolio de diseño gráfico</title>
+<meta name="description" content="Portafolio de diseño gráfico, ilustración y motion en pixel art. Identidad visual, editorial y animación.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<!-- ══════════ PANTALLA DE CARGA ══════════ -->
+<div class="cargador" id="cargador">
+  <div class="cargador__caja">
+    <div class="sprite-host cargador__gato" id="cargador-gato"></div>
+    <p class="cargador__texto">CARGANDO<span class="puntos">...</span></p>
+    <div class="barra-pixel"><span></span></div>
+  </div>
+</div>
+
+<!-- ══════════ FONDO ══════════ -->
+<div class="fondo" aria-hidden="true">
+  <div class="fondo__rejilla"></div>
+  <div class="fondo__estrellas" id="estrellas"></div>
+  <div class="fondo__brillo fondo__brillo--1"></div>
+  <div class="fondo__brillo fondo__brillo--2"></div>
+</div>
+<div class="crt" aria-hidden="true"></div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__punto"></span></div>
+
+<!-- ══════════ HUD SUPERIOR ══════════ -->
+<header class="nav" id="nav">
+  <div class="nav__caja">
+    <a href="#inicio" class="nav__marca">
+      <span class="sprite-host nav__logo" id="logo-gato"></span>
+      <span class="nav__nombre" data-campo="sitio.titulo">Estudio Mango</span>
+    </a>
+    <nav class="nav__enlaces" id="nav-enlaces">
+      <a href="#estudio">Estudio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto" class="nav__cta">Hablemos</a>
+    </nav>
+    <div class="nav__acciones">
+      <button class="btn-pixel btn-pixel--icono" id="btn-tema" type="button" aria-label="Cambiar de pantalla">
+        <span class="nav__tema-icono">☾</span>
+      </button>
+      <button class="btn-pixel btn-pixel--icono nav__menu" id="btn-menu" type="button" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════ PORTADA ══════════ -->
+<section class="hero" id="inicio">
+  <div class="hero__texto">
+    <p class="hero__etiqueta"><span class="parpadeo">▶</span> <span data-campo="perfil.rol">Diseñadora gráfica</span></p>
+    <h1 class="hero__titulo">
+      <span class="hero__linea" data-campo="perfil.titularLinea1">Ideas que</span>
+      <span class="hero__linea hero__linea--acento" data-campo="perfil.titularLinea2">maúllan fuerte</span>
+    </h1>
+
+    <div class="dialogo">
+      <span class="dialogo__nombre" data-campo="perfil.alias">MILA</span>
+      <p class="dialogo__texto" id="dialogo-texto" data-campo="perfil.resumen"></p>
+      <span class="dialogo__cursor">▼</span>
+    </div>
+
+    <div class="hero__botones">
+      <a href="#proyectos" class="btn-pixel btn-pixel--primario"><b>A</b> Ver proyectos</a>
+      <a href="#contacto" class="btn-pixel"><b>B</b> Hablemos</a>
+    </div>
+
+    <ul class="hero__datos" id="hero-datos"></ul>
+  </div>
+
+  <div class="hero__escena">
+    <div class="escena">
+      <div class="escena__luna"></div>
+      <div class="escena__nube escena__nube--1"></div>
+      <div class="escena__nube escena__nube--2"></div>
+
+      <div class="globo" id="globo">
+        <p id="globo-texto">Hoy toca inventar algo que no existía ayer.</p>
+      </div>
+
+      <div class="escena__actores">
+        <div class="sprite-host escena__mila" id="mila-hero"></div>
+      </div>
+      <div class="escena__paseo" id="gato-escena"></div>
+      <div class="escena__suelo"></div>
+      <div class="escena__tierra"></div>
+    </div>
+  </div>
+
+  <a href="#estudio" class="hero__scroll"><span class="parpadeo">▼</span> desliza</a>
+</section>
+
+<!-- ══════════ ESTUDIO ══════════ -->
+<section class="seccion" id="estudio">
+  <div class="seccion__cabecera revelar">
+    <span class="seccion__num">NIVEL 01</span>
+    <h2 class="seccion__titulo">El estudio</h2>
+    <p class="seccion__sub">quién dibuja todo esto</p>
+  </div>
+
+  <div class="estudio__grid">
+    <article class="panel revelar">
+      <h3 data-campo="perfil.nombre">Mila Reyes</h3>
+      <div class="estudio__bio" data-campo="perfil.bio"></div>
+      <ul class="estudio__meta">
+        <li><b>Base</b><span data-campo="perfil.ubicacion"></span></li>
+        <li><b>Estado</b><span id="estudio-estado">Agenda abierta</span></li>
+      </ul>
+    </article>
+
+    <aside class="ficha revelar">
+      <div class="ficha__retrato"><div class="sprite-host" id="mila-abrazo"></div></div>
+      <div class="ficha__cabecera">
+        <b data-campo="gato.nombre">Mango</b>
+        <small>supervisor de calidad</small>
+      </div>
+      <ul class="ficha__stats">
+        <li><span>SIESTAS</span><i class="barra"><u style="--v:96%"></u></i></li>
+        <li><span>MAULLIDOS</span><i class="barra"><u style="--v:80%"></u></i></li>
+        <li><span>AYUDA REAL</span><i class="barra"><u style="--v:22%"></u></i></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════ PROYECTOS ══════════ -->
+<section class="seccion" id="proyectos">
+  <div class="seccion__cabecera revelar">
+    <span class="seccion__num">NIVEL 02</span>
+    <h2 class="seccion__titulo">Proyectos</h2>
+    <p class="seccion__sub">elige uno y pulsa start</p>
+  </div>
+  <div class="filtros revelar" id="filtros"></div>
+  <div class="rejilla" id="rejilla"></div>
+  <p class="vacio" id="vacio" hidden>No hay proyectos en esta categoría. <a href="/admin">Súbelos desde el panel →</a></p>
+</section>
+
+<!-- ══════════ SERVICIOS ══════════ -->
+<section class="seccion" id="servicios">
+  <div class="seccion__cabecera revelar">
+    <span class="seccion__num">NIVEL 03</span>
+    <h2 class="seccion__titulo">Servicios</h2>
+    <p class="seccion__sub">en qué te puedo ayudar</p>
+  </div>
+  <div class="servicios__grid" id="servicios-grid"></div>
+</section>
+
+<!-- ══════════ PROCESO ══════════ -->
+<section class="seccion" id="proceso">
+  <div class="seccion__cabecera revelar">
+    <span class="seccion__num">NIVEL 04</span>
+    <h2 class="seccion__titulo">Cómo trabajo</h2>
+    <p class="seccion__sub">cuatro fases y un gato vigilando</p>
+  </div>
+  <div class="proceso">
+    <div class="sprite-host proceso__gato" id="gato-proceso"></div>
+    <div class="proceso__barra"><span id="proceso-relleno"></span></div>
+    <div class="proceso__pasos" id="proceso-pasos"></div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<section class="seccion" id="contacto">
+  <div class="guardado revelar">
+    <div class="sprite-host guardado__mila" id="mila-contacto"></div>
+    <div class="guardado__texto">
+      <span class="guardado__etiqueta">PUNTO DE GUARDADO</span>
+      <h2 data-campo="contacto.titulo">¿Empezamos algo?</h2>
+      <p data-campo="contacto.texto"></p>
+      <a class="btn-pixel btn-pixel--primario btn-pixel--grande" id="contacto-mail" href="#"><b>✉</b> <span>Escríbeme</span></a>
+      <div class="contacto__redes" id="contacto-redes"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p><span class="parpadeo">●</span> © <span id="anio"></span> <span data-campo="perfil.nombre">Mila Reyes</span> — hecho a mano, pixel a pixel</p>
+  <a href="/admin" class="pie__admin">▸ panel de administración</a>
+</footer>
+
+<!-- ══════════ FICHA DE PROYECTO ══════════ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__fondo" data-cerrar></div>
+  <article class="modal__caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <header class="modal__barra">
+      <span class="modal__puntos"><i></i><i></i><i></i></span>
+      <span class="modal__archivo" id="modal-categoria"></span>
+      <button class="modal__cerrar" data-cerrar aria-label="Cerrar">✕</button>
+    </header>
+    <div class="modal__visor" id="modal-visor"></div>
+    <div class="modal__miniaturas" id="modal-miniaturas"></div>
+    <div class="modal__info">
+      <div class="modal__cabecera">
+        <span class="modal__num" id="modal-num"></span>
+        <h3 id="modal-titulo"></h3>
+        <span class="modal__anio" id="modal-anio"></span>
+      </div>
+      <p class="modal__cliente" id="modal-cliente"></p>
+      <p class="modal__desc" id="modal-desc"></p>
+      <div class="caso" id="modal-caso"></div>
+      <div class="marca" id="modal-marca"></div>
+      <div class="posts" id="modal-posts"></div>
+      <div class="modal__etiquetas" id="modal-etiquetas"></div>
+      <a class="btn-pixel" id="modal-enlace" target="_blank" rel="noopener" hidden>Ver proyecto completo ↗</a>
+    </div>
+  </article>
+</div>
+
+<!-- ══════════ LUPA · ver una pieza a pantalla completa ══════════ -->
+<div class="lupa" id="lupa" hidden>
+  <div class="lupa__fondo" data-cerrar-lupa></div>
+  <button class="lupa__cerrar" data-cerrar-lupa aria-label="Cerrar">✕</button>
+  <button class="lupa__flecha lupa__flecha--ant" id="lupa-ant" aria-label="Anterior">◀</button>
+  <figure class="lupa__caja">
+    <div class="lupa__medio" id="lupa-medio"></div>
+    <figcaption class="lupa__pie"><span id="lupa-pie"></span><b id="lupa-cuenta"></b></figcaption>
+  </figure>
+  <button class="lupa__flecha lupa__flecha--sig" id="lupa-sig" aria-label="Siguiente">▶</button>
+</div>
+
+<script src="/js/embeds.js"></script>
+<script src="/js/sprites.js"></script>
+<script src="/js/pixel.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

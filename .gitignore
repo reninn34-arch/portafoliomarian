@@ -1,0 +1,10 @@
+node_modules/
+.vercel/
+.env
+.env.local
+
+# tu contenido real y tu contraseña: no viajan al repositorio.
+# En la nube vive en Postgres; en tu ordenador, aquí.
+data/content.json
+data/content.json.tmp
+data/content-antes-de-migrar.json
