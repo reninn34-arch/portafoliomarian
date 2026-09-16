@@ -3,6 +3,7 @@
   "framework": null,
   "outputDirectory": "public",
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index?ruta=$1" },
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/admin/", "destination": "/admin.html" }
   ],

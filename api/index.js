@@ -4,6 +4,11 @@
  * Vercel manda aquí cualquier /api/... y esta función se lo pasa al mismo
  * router que usa el servidor de tu ordenador, así no hay dos versiones de la
  * lógica que se puedan ir separando con el tiempo.
+ *
+ * El reparto lo hace una reescritura de vercel.json, que mete la ruta pedida
+ * en ?ruta=. Antes esto era un archivo comodín api/[...ruta].js y Vercel lo
+ * trataba como si fuese de un solo tramo: /api/config entraba, pero
+ * /api/auth/login daba 404.
  */
 const { manejar } = require('../lib/api');
 const { json } = require('../lib/comun');
