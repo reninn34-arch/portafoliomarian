@@ -129,7 +129,8 @@ node server.js
 
 - Sitio público → http://localhost:4321
 - Panel admin → http://localhost:4321/admin
-- Contraseña inicial → `mango2026` (cámbiala en *Ajustes* la primera vez)
+- Contraseña inicial → la imprime el servidor al arrancar, en la consola (cámbiala en *Ajustes* la primera vez).
+  Para fijarla tú: `ADMIN_PASS=loquesea node server.js`
 
 Para usar otro puerto: `PORT=8080 node server.js`
 

@@ -24,7 +24,9 @@
     </label>
     <button class="btn btn--primario" type="submit">Entrar</button>
     <p class="acceso__error" id="acceso-error"></p>
-    <small class="acceso__pista">Clave inicial: <code>mango2026</code> — cámbiala en Ajustes.</small>
+    <!-- Aquí salía la clave por defecto escrita. En un sitio publicado eso es
+         dejar la llave puesta: cualquiera que abra /admin la leía. -->
+    <small class="acceso__pista">¿La olvidaste? Cámbiala desde tu ordenador y vuelve a subirla.</small>
   </form>
 </div>
 
@@ -71,6 +73,7 @@
           <div class="grid-2">
             <label class="campo"><span>Nombre</span><input data-ruta="perfil.nombre"></label>
             <label class="campo"><span>Rol / especialidad</span><input data-ruta="perfil.rol"></label>
+            <label class="campo"><span>Alias — el nombre de la caja de diálogo</span><input data-ruta="perfil.alias" placeholder="MILA"></label>
             <label class="campo"><span>Titular — primera línea</span><input data-ruta="perfil.titularLinea1"></label>
             <label class="campo"><span>Titular — segunda línea (en color)</span><input data-ruta="perfil.titularLinea2"></label>
             <label class="campo"><span>Ubicación</span><input data-ruta="perfil.ubicacion"></label>
